@@ -1,10 +1,15 @@
 [package]
 name = "rust-image-compress"
-version = "0.1.0"
+version = "1.0.1"
 edition = "2024"
 
+[profile.release]     
+codegen-units = 1
+strip = true           
+lto = true
+
 [dependencies]
-glob = "0.3.2"
-image = "0.25.6"
 ravif = { version = "0.12.0", default-features = false }
+image = { version = "0.25.6", default-features = false, features = ["png", "jpeg", "webp"] }
+glob = "0.3.2"
 rgb = "0.8.51"

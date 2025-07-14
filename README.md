@@ -1,20 +1,20 @@
 **Rust Image Compress** is a simple command-line utility written in Rust to convert and compress images (PNG, JPG, JPEG, WebP) into the high-efficiency AVIF format.
 
 ## Why ?
-Because I needed a batch compression tool for my wallpapers and the GIMP plugin I was using stopped working time ago.
+Because I needed a batch compression tool for my wallpapers and the GIMP plugin I was using stopped working.
 
 ## Features
 
 - Fully offline, no need to be ashamed of your waifu wallpapers
-- Tested on Linux and Windows
 - Supports multiple input formats: PNG, JPG, JPEG, and WebP
 - Configurable compression via quality and speed
 - Batch processing of all images in a directory
 - Rustacean speed with multi-thread support
+- Tested on Linux and Windows
 
 ## Requirements
 
-- Rust
+- Rust toolchain
 
 ## Building
 
@@ -29,7 +29,7 @@ Because I needed a batch compression tool for my wallpapers and the GIMP plugin 
    cargo build --release
    ```
 
-3. The compiled executable will be located at:
+3. The executable will be located at:
    ```bash
    target/release/rust-image-compress
    ```
@@ -47,8 +47,12 @@ Run the program and follow instructions:
 You will be prompted for:
 
 1. **Path to the images folder**: directory containing your images.
-2. **Quality (1-100)**: sets the compression level. Higher values produce higher-quality (and larger) outputs. Default: 80.
-3. **Speed (1-10)**: determines the encoding speed. Negatively affects both quality and file size.  Default: 8.
+2. **Quality (1-100)**: sets the compression level. Higher values produce higher quality and larger outputs. Default: 85.
+3. **Speed (1-10)**: determines the encoding speed. Higher values increase speed but may negatively affect quality and file size. Default: 8.
 
 Images are saved in the `output` folder.
+
+## Notes
+
+Be aware that the AVIF format is not supported everywhere. However, you can always recover the original format using other tools.
 

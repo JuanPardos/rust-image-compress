@@ -7,6 +7,8 @@ use rgb::RGBA;
 use ravif::*;
 
 const FILE_MASK: [&str; 4] = ["png", "jpg", "jpeg", "webp"];
+const DEFAULT_QUALITY: u8 = 85;
+const DEFAULT_SPEED: u8 = 8;
 
 fn main() {
     let options = main_menu();
@@ -30,17 +32,17 @@ fn main_menu() -> Vec<String> {
     println!("Welcome to the Image Compression Tool!");
 
     println!("Please enter the path of the image folder: ");
-    std::io::stdin().read_line(&mut path).expect("Failed to read input");
+    stdin().read_line(&mut path).expect("Failed to read input");
 
-    println!("Please enter the desired quality (1-100). Default: 80");
-    std::io::stdin().read_line(&mut quality).expect("Failed to read input");
+    println!("Please enter the desired quality (1-100). Default: {DEFAULT_QUALITY}");
+    stdin().read_line(&mut quality).expect("Failed to read input");
 
-    println!("Please enter the desired speed (1-10). Default: 8");
-    std::io::stdin().read_line(&mut speed).expect("Failed to read input");
+    println!("Please enter the desired speed (1-10). Default: {DEFAULT_SPEED}");
+    stdin().read_line(&mut speed).expect("Failed to read input");
 
     path = path.trim().to_string();
-    let quality = if quality.trim().is_empty() { "80".to_string() } else { quality.trim().to_string() };
-    let speed = if speed.trim().is_empty() { "8".to_string() } else { speed.trim().to_string() };
+    let quality = if quality.trim().is_empty() { DEFAULT_QUALITY.to_string() } else { quality.trim().to_string() };
+    let speed = if speed.trim().is_empty() { DEFAULT_SPEED.to_string() } else { speed.trim().to_string() };
 
     vec![path, quality, speed]
 }
