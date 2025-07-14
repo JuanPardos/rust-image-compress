@@ -47,7 +47,7 @@ Run the program and follow instructions:
 You will be prompted for:
 
 1. **Path to the images folder**: directory containing your images.
-2. **Quality (1-100)**: sets the compression level. Higher values produce higher quality and larger outputs. Default: 85.
+2. **Quality (1-100)**: sets the compression level. Higher values produce higher quality and larger output files. Default: 85.
 3. **Speed (1-10)**: determines the encoding speed. Higher values increase speed but may negatively affect quality and file size. Default: 8.
 
 Images are saved in the `output` folder.
